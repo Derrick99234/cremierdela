@@ -35,8 +35,9 @@ export default function ServicesSection() {
                 src="/images/cremier-dela-technician-repairs-service.jpg"
                 alt="Cremier Dela Certified Nigerian Technicians Servicing Commercial Soft Serve Machine"
                 fill
+                priority
                 style={{ objectFit: "cover" }}
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 900px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -81,6 +82,16 @@ export default function ServicesSection() {
           grid-template-columns: 1fr 1.15fr;
           gap: 56px;
           align-items: center;
+          width: 100%;
+        }
+
+        .services-visual {
+          width: 100%;
+          display: block;
+        }
+
+        .services-content {
+          width: 100%;
         }
 
         .services-image-box {
@@ -91,6 +102,7 @@ export default function ServicesSection() {
           overflow: hidden;
           border: 1px solid var(--border-color);
           box-shadow: var(--shadow-md);
+          background-color: #f1f5f9;
         }
 
         .services-title {
@@ -144,14 +156,23 @@ export default function ServicesSection() {
         @media (max-width: 900px) {
           .services-layout {
             grid-template-columns: 1fr;
-            gap: 32px;
+            gap: 28px;
+            width: 100%;
+          }
+          .services-visual {
+            width: 100%;
+            display: block;
+          }
+          .services-content {
+            width: 100%;
           }
           .services-image-box {
-            height: 240px;
+            width: 100%;
+            height: 250px;
             border-radius: 16px;
           }
           .services-title {
-            font-size: 1.65rem;
+            font-size: 1.55rem;
           }
           .services-description {
             font-size: 0.95rem;

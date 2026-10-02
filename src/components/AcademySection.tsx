@@ -67,8 +67,9 @@ export default function AcademySection() {
                 src="/images/cremier-dela-ice-cream-training-academy.jpg"
                 alt="Cremier Dela Hands-on Ice Cream Masterclass Academy in Nigeria"
                 fill
+                priority
                 style={{ objectFit: "cover" }}
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 900px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -81,6 +82,16 @@ export default function AcademySection() {
           grid-template-columns: 1.15fr 1fr;
           gap: 56px;
           align-items: center;
+          width: 100%;
+        }
+
+        .academy-content {
+          width: 100%;
+        }
+
+        .academy-visual {
+          width: 100%;
+          display: block;
         }
 
         .academy-image-box {
@@ -91,6 +102,7 @@ export default function AcademySection() {
           overflow: hidden;
           border: 1px solid var(--border-color);
           box-shadow: var(--shadow-md);
+          background-color: #f1f5f9;
         }
 
         .academy-title {
@@ -145,14 +157,24 @@ export default function AcademySection() {
           .academy-layout {
             display: flex;
             flex-direction: column-reverse;
-            gap: 32px;
+            align-items: stretch;
+            gap: 28px;
+            width: 100%;
+          }
+          .academy-content {
+            width: 100%;
+          }
+          .academy-visual {
+            width: 100%;
+            display: block;
           }
           .academy-image-box {
-            height: 240px;
+            width: 100%;
+            height: 250px;
             border-radius: 16px;
           }
           .academy-title {
-            font-size: 1.65rem;
+            font-size: 1.55rem;
           }
           .academy-description {
             font-size: 0.95rem;
