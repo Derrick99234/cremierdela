@@ -5,29 +5,12 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer
-      style={{
-        backgroundColor: "#0f172a",
-        color: "#ffffff",
-        padding: "48px 0 24px 0",
-        borderTop: "1px solid #1e293b"
-      }}
-    >
+    <footer className="footer-wrapper">
       <div className="container">
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: "24px",
-            paddingBottom: "32px",
-            borderBottom: "1px solid #1e293b"
-          }}
-        >
+        <div className="footer-top">
           {/* Logo & Tagline */}
-          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-            <div style={{ position: "relative", width: "140px", height: "55px" }}>
+          <div className="footer-brand">
+            <div className="footer-logo-box">
               <Image
                 src="/images/logo.png"
                 alt="Cremier Dela"
@@ -36,38 +19,118 @@ export default function Footer() {
                 sizes="140px"
               />
             </div>
-            <p style={{ color: "#94a3b8", fontSize: "0.9rem", maxWidth: "340px" }}>
-              Sales of ice cream machines, powders, utensils, repairs, and training school.
+            <p className="footer-tagline">
+              Commercial ice cream machines, premium powders, utensils, repairs, and training school.
             </p>
           </div>
 
           {/* Quick links */}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", fontSize: "0.9rem", color: "#cbd5e1" }}>
-            <a href="#powders" style={{ transition: "color 0.2s ease" }}>Powders</a>
-            <a href="#machines" style={{ transition: "color 0.2s ease" }}>Machines</a>
-            <a href="#utensils" style={{ transition: "color 0.2s ease" }}>Utensils</a>
-            <a href="#repairs" style={{ transition: "color 0.2s ease" }}>Repairs</a>
-            <a href="#training" style={{ transition: "color 0.2s ease" }}>Training School</a>
-            <a href="#contact" style={{ transition: "color 0.2s ease" }}>Contact</a>
+          <div className="footer-nav">
+            <a href="#powders">Powders</a>
+            <a href="#machines">Machines</a>
+            <a href="#utensils">Utensils</a>
+            <a href="#repairs">Repairs</a>
+            <a href="#training">Training</a>
+            <a href="#contact">Contact</a>
           </div>
         </div>
 
-        <div
-          style={{
-            paddingTop: "24px",
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: "12px",
-            fontSize: "0.85rem",
-            color: "#64748b"
-          }}
-        >
+        <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Cremier Dela. All rights reserved.</p>
-          <p>Phone: 08033159674 | 08039445604 • Email: cremierdela@gmail.com</p>
+          <p>08033159674 | 08039445604 • cremierdela@gmail.com</p>
         </div>
       </div>
+
+      <style jsx>{`
+        .footer-wrapper {
+          background-color: #070b14;
+          color: #ffffff;
+          padding: 48px 0 36px 0;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-top {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          gap: 24px;
+          padding-bottom: 32px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-brand {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+        }
+
+        .footer-logo-box {
+          position: relative;
+          width: 140px;
+          height: 52px;
+          flex-shrink: 0;
+        }
+
+        .footer-tagline {
+          color: #94a3b8;
+          font-size: 0.88rem;
+          max-width: 320px;
+          line-height: 1.5;
+        }
+
+        .footer-nav {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          font-size: 0.9rem;
+          color: #cbd5e1;
+        }
+
+        .footer-nav a {
+          transition: color 0.2s ease;
+        }
+
+        .footer-nav a:hover {
+          color: #ffffff;
+        }
+
+        .footer-bottom {
+          padding-top: 24px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          gap: 12px;
+          font-size: 0.84rem;
+          color: #64748b;
+        }
+
+        @media (max-width: 768px) {
+          .footer-wrapper {
+            padding: 40px 0 64px 0; /* extra bottom padding for floating whatsapp */
+          }
+          .footer-top {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+          }
+          .footer-brand {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+          }
+          .footer-nav {
+            gap: 14px;
+            font-size: 0.85rem;
+          }
+          .footer-bottom {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+          }
+        }
+      `}</style>
     </footer>
   );
 }

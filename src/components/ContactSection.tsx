@@ -24,138 +24,47 @@ export default function ContactSection() {
   return (
     <section id="contact" className="section" style={{ backgroundColor: "#f8fafc" }}>
       <div className="container">
-        {/* Section Header (No pill badge) */}
+        {/* Section Header */}
         <div className="section-header">
-          <h2 className="section-title">Request Quotations &amp; Technical Support</h2>
+          <h2 className="section-title">Request Quotations &amp; Support</h2>
           <p className="section-description">
             Connect with our team for machine pricing, bulk powder supply, servicing requests, or academy admissions.
           </p>
         </div>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr",
-            gap: "48px"
-          }}
-          className="contact-layout"
-        >
+        <div className="contact-layout">
           {/* Left Column: Direct Office Lines */}
-          <div>
-            <h3 style={{ fontSize: "1.35rem", fontWeight: 800, color: "var(--text-primary)", marginBottom: "20px" }}>
-              Direct Office Lines
-            </h3>
+          <div className="contact-info-block">
+            <h3 className="contact-block-title">Direct Office Lines</h3>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "36px" }}>
-              <div
-                style={{
-                  padding: "20px",
-                  borderRadius: "16px",
-                  background: "#ffffff",
-                  border: "1px solid var(--border-color)",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "16px"
-                }}
-              >
-                <div
-                  style={{
-                    width: "48px",
-                    height: "48px",
-                    borderRadius: "12px",
-                    background: "var(--color-primary-soft)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "var(--color-primary)"
-                  }}
-                >
-                  <Phone size={22} />
+            <div className="office-lines-list">
+              <div className="office-line-card">
+                <div className="office-icon-box phone-primary">
+                  <Phone size={20} />
                 </div>
                 <div>
-                  <span style={{ fontSize: "0.8rem", color: "var(--text-secondary)", fontWeight: 600, display: "block" }}>
-                    Primary Commercial Sales &amp; Technical Line
-                  </span>
-                  <a
-                    href="tel:08033159674"
-                    style={{ fontSize: "1.2rem", fontWeight: 800, color: "var(--text-primary)" }}
-                  >
-                    08033159674
-                  </a>
+                  <span className="office-label">Primary Commercial &amp; Technical Line</span>
+                  <a href="tel:08033159674" className="office-val">08033159674</a>
                 </div>
               </div>
 
-              <div
-                style={{
-                  padding: "20px",
-                  borderRadius: "16px",
-                  background: "#ffffff",
-                  border: "1px solid var(--border-color)",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "16px"
-                }}
-              >
-                <div
-                  style={{
-                    width: "48px",
-                    height: "48px",
-                    borderRadius: "12px",
-                    background: "var(--color-accent-soft)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "var(--color-accent-hover)"
-                  }}
-                >
-                  <Phone size={22} />
+              <div className="office-line-card">
+                <div className="office-icon-box phone-secondary">
+                  <Phone size={20} />
                 </div>
                 <div>
-                  <span style={{ fontSize: "0.8rem", color: "var(--text-secondary)", fontWeight: 600, display: "block" }}>
-                    Secondary Line &amp; Training Academy
-                  </span>
-                  <a
-                    href="tel:08039445604"
-                    style={{ fontSize: "1.2rem", fontWeight: 800, color: "var(--text-primary)" }}
-                  >
-                    08039445604
-                  </a>
+                  <span className="office-label">Secondary Line &amp; Training Academy</span>
+                  <a href="tel:08039445604" className="office-val">08039445604</a>
                 </div>
               </div>
 
-              <div
-                style={{
-                  padding: "20px",
-                  borderRadius: "16px",
-                  background: "#ffffff",
-                  border: "1px solid var(--border-color)",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "16px"
-                }}
-              >
-                <div
-                  style={{
-                    width: "48px",
-                    height: "48px",
-                    borderRadius: "12px",
-                    background: "#eff6ff",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "#2563eb"
-                  }}
-                >
-                  <Mail size={22} />
+              <div className="office-line-card">
+                <div className="office-icon-box mail-box">
+                  <Mail size={20} />
                 </div>
                 <div>
-                  <span style={{ fontSize: "0.8rem", color: "var(--text-secondary)", fontWeight: 600, display: "block" }}>
-                    Corporate Email Inquiries
-                  </span>
-                  <a
-                    href="mailto:cremierdela@gmail.com"
-                    style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--text-primary)" }}
-                  >
+                  <span className="office-label">Corporate Email Inquiries</span>
+                  <a href="mailto:cremierdela@gmail.com" className="office-val email-val">
                     cremierdela@gmail.com
                   </a>
                 </div>
@@ -163,16 +72,13 @@ export default function ContactSection() {
             </div>
 
             {/* Social Channels */}
-            <h4 style={{ fontSize: "0.95rem", fontWeight: 800, color: "var(--text-primary)", marginBottom: "14px" }}>
-              Official Social Media
-            </h4>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+            <h4 className="social-heading">Official Social Media</h4>
+            <div className="social-links-group">
               <a
                 href="https://www.tiktok.com/@cremier_dela"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-outline"
-                style={{ padding: "9px 16px", fontSize: "0.85rem" }}
+                className="btn btn-outline social-btn"
               >
                 TikTok: <strong>@cremier_dela</strong>
               </a>
@@ -180,8 +86,7 @@ export default function ContactSection() {
                 href="https://www.instagram.com/cremierdela"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-outline"
-                style={{ padding: "9px 16px", fontSize: "0.85rem" }}
+                className="btn btn-outline social-btn"
               >
                 Instagram: <strong>Cremier Dela</strong>
               </a>
@@ -189,8 +94,7 @@ export default function ContactSection() {
                 href="https://www.facebook.com/cremierdela"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-outline"
-                style={{ padding: "9px 16px", fontSize: "0.85rem" }}
+                className="btn btn-outline social-btn"
               >
                 Facebook: <strong>Cremier Dela</strong>
               </a>
@@ -198,27 +102,15 @@ export default function ContactSection() {
           </div>
 
           {/* Right Column: Clean Inquiry Form */}
-          <div
-            className="sleek-card"
-            style={{
-              padding: "36px",
-              background: "#ffffff",
-              border: "1px solid var(--border-color)",
-              borderRadius: "20px"
-            }}
-          >
-            <h3 style={{ fontSize: "1.35rem", fontWeight: 800, color: "var(--text-primary)", marginBottom: "6px" }}>
-              Send An Inquiry
-            </h3>
-            <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", marginBottom: "24px" }}>
+          <div className="sleek-card contact-form-card">
+            <h3 className="form-card-title">Send An Inquiry</h3>
+            <p className="form-card-desc">
               Fill in your details and our representative will follow up directly with pricing, specs, or availability.
             </p>
 
-            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
-              <div>
-                <label style={{ display: "block", fontSize: "0.85rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "6px" }}>
-                  Your Full Name *
-                </label>
+            <form onSubmit={handleSubmit} className="inquiry-form">
+              <div className="form-group">
+                <label className="form-label">Your Full Name *</label>
                 <input
                   type="text"
                   required
@@ -229,10 +121,8 @@ export default function ContactSection() {
                 />
               </div>
 
-              <div>
-                <label style={{ display: "block", fontSize: "0.85rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "6px" }}>
-                  Phone / WhatsApp Number *
-                </label>
+              <div className="form-group">
+                <label className="form-label">Phone / WhatsApp Number *</label>
                 <input
                   type="tel"
                   required
@@ -243,10 +133,8 @@ export default function ContactSection() {
                 />
               </div>
 
-              <div>
-                <label style={{ display: "block", fontSize: "0.85rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "6px" }}>
-                  Category of Interest
-                </label>
+              <div className="form-group">
+                <label className="form-label">Category of Interest</label>
                 <select
                   value={interest}
                   onChange={(e) => setInterest(e.target.value)}
@@ -262,10 +150,8 @@ export default function ContactSection() {
                 </select>
               </div>
 
-              <div>
-                <label style={{ display: "block", fontSize: "0.85rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "6px" }}>
-                  Message or Specific Inquiries
-                </label>
+              <div className="form-group">
+                <label className="form-label">Message or Specific Inquiries</label>
                 <textarea
                   rows={4}
                   placeholder="Tell us what you need (e.g. Machine model, powder quantity, delivery location)..."
@@ -275,11 +161,7 @@ export default function ContactSection() {
                 />
               </div>
 
-              <button
-                type="submit"
-                className="btn btn-primary"
-                style={{ width: "100%", padding: "14px", marginTop: "6px" }}
-              >
+              <button type="submit" className="btn btn-primary submit-btn">
                 <Send size={16} />
                 <span>Submit Inquiry</span>
               </button>
@@ -289,9 +171,159 @@ export default function ContactSection() {
       </div>
 
       <style jsx>{`
-        @media (min-width: 920px) {
+        .contact-layout {
+          display: grid;
+          grid-template-columns: 1fr 1.15fr;
+          gap: 48px;
+        }
+
+        .contact-block-title {
+          font-size: 1.35rem;
+          font-weight: 800;
+          color: var(--text-primary);
+          margin-bottom: 20px;
+        }
+
+        .office-lines-list {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          margin-bottom: 32px;
+        }
+
+        .office-line-card {
+          padding: 18px 20px;
+          border-radius: 16px;
+          background: #ffffff;
+          border: 1px solid var(--border-color);
+          display: flex;
+          align-items: center;
+          gap: 16px;
+        }
+
+        .office-icon-box {
+          width: 44px;
+          height: 44px;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+
+        .phone-primary {
+          background: var(--color-primary-soft);
+          color: var(--color-primary);
+        }
+
+        .phone-secondary {
+          background: var(--color-accent-soft);
+          color: var(--color-accent-hover);
+        }
+
+        .mail-box {
+          background: #eff6ff;
+          color: #2563eb;
+        }
+
+        .office-label {
+          font-size: 0.8rem;
+          color: var(--text-secondary);
+          font-weight: 600;
+          display: block;
+        }
+
+        .office-val {
+          font-size: 1.15rem;
+          font-weight: 800;
+          color: var(--text-primary);
+        }
+
+        .email-val {
+          font-size: 1.05rem;
+          font-weight: 700;
+        }
+
+        .social-heading {
+          font-size: 0.95rem;
+          font-weight: 800;
+          color: var(--text-primary);
+          margin-bottom: 12px;
+        }
+
+        .social-links-group {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+
+        .social-btn {
+          padding: 8px 14px;
+          font-size: 0.84rem;
+        }
+
+        .contact-form-card {
+          padding: 36px;
+          background: #ffffff;
+          border: 1px solid var(--border-color);
+          border-radius: 20px;
+        }
+
+        .form-card-title {
+          font-size: 1.35rem;
+          font-weight: 800;
+          color: var(--text-primary);
+          margin-bottom: 6px;
+        }
+
+        .form-card-desc {
+          font-size: 0.9rem;
+          color: var(--text-secondary);
+          margin-bottom: 24px;
+        }
+
+        .inquiry-form {
+          display: flex;
+          flex-direction: column;
+          gap: 18px;
+        }
+
+        .form-group {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .form-label {
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: var(--text-primary);
+          margin-bottom: 6px;
+        }
+
+        .submit-btn {
+          width: 100%;
+          padding: 14px;
+          margin-top: 6px;
+        }
+
+        @media (max-width: 900px) {
           .contact-layout {
-            grid-template-columns: 1fr 1.15fr !important;
+            grid-template-columns: 1fr;
+            gap: 36px;
+          }
+          .contact-form-card {
+            padding: 24px 16px;
+            border-radius: 16px;
+          }
+          .office-line-card {
+            padding: 14px 16px;
+          }
+          .office-val {
+            font-size: 1.05rem;
+          }
+          .social-btn {
+            width: 100%;
+            justify-content: center;
           }
         }
       `}</style>

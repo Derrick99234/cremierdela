@@ -251,10 +251,21 @@ img {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
   .section {
-    padding: 64px 0;
+    padding: 56px 0;
   }
   .section-header {
-    margin-bottom: 36px;
+    margin-bottom: 32px;
+  }
+  .section-title {
+    font-size: 1.85rem;
+    line-height: 1.2;
+  }
+  .section-description {
+    font-size: 0.95rem;
   }
 }
+

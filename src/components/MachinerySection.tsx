@@ -126,7 +126,7 @@ export default function MachinerySection() {
   return (
     <section id="machines" className="section" style={{ backgroundColor: "#f8fafc" }}>
       <div className="container">
-        {/* Clean Header (No pill badge) */}
+        {/* Clean Header */}
         <div className="section-header">
           <h2 className="section-title">Commercial Machinery &amp; Equipment</h2>
           <p className="section-description">
@@ -134,108 +134,177 @@ export default function MachinerySection() {
             Nigerian technician support and original spare parts.
           </p>
 
-          {/* Minimalist Tabs */}
-          <div
-            style={{
-              display: "inline-flex",
-              flexWrap: "wrap",
-              gap: "8px",
-              marginTop: "24px",
-              justifyContent: "center",
-              background: "#ffffff",
-              padding: "6px",
-              borderRadius: "12px",
-              border: "1px solid var(--border-color)"
-            }}
-          >
-            {[
-              { id: "all", label: "All Equipment" },
-              { id: "softserve", label: "Soft-Serve Machines" },
-              { id: "batch", label: "Gelato & Batch Freezers" },
-              { id: "snacks", label: "Warmers & Concessions" },
-              { id: "packaging", label: "Packaging & Cold Prep" }
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
-                style={{
-                  padding: "8px 18px",
-                  borderRadius: "8px",
-                  fontSize: "0.88rem",
-                  fontWeight: 600,
-                  cursor: "pointer",
-                  border: "none",
-                  backgroundColor: activeTab === tab.id ? "var(--color-primary)" : "transparent",
-                  color: activeTab === tab.id ? "#ffffff" : "var(--text-secondary)",
-                  transition: "all 0.15s ease"
-                }}
-              >
-                {tab.label}
-              </button>
-            ))}
+          {/* Minimalist Tabs with Mobile Horizontal Swipe */}
+          <div className="tabs-wrapper">
+            <div className="tabs-container">
+              {[
+                { id: "all", label: "All Equipment" },
+                { id: "softserve", label: "Soft-Serve Machines" },
+                { id: "batch", label: "Gelato & Batch Freezers" },
+                { id: "snacks", label: "Warmers & Concessions" },
+                { id: "packaging", label: "Packaging & Cold Prep" }
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id as any)}
+                  className={`tab-btn ${activeTab === tab.id ? "active" : ""}`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Clean Machinery Grid (No pill badges, no repetitive buttons on every card) */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-            gap: "28px"
-          }}
-        >
+        {/* Machinery Grid */}
+        <div className="machinery-grid">
           {filtered.map((machine, idx) => (
-            <div
-              key={idx}
-              className="sleek-card"
-              style={{
-                borderRadius: "16px",
-                border: "1px solid var(--border-color)",
-                background: "#ffffff"
-              }}
-            >
-              {/* Product Visual */}
-              <div
-                style={{
-                  position: "relative",
-                  height: "260px",
-                  backgroundColor: "#ffffff",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: "20px",
-                  borderBottom: "1px solid var(--border-light)"
-                }}
-              >
-                <div style={{ position: "relative", width: "100%", height: "100%" }}>
-                  <Image
-                    src={machine.image}
-                    alt={machine.title}
-                    fill
-                    style={{ objectFit: "contain" }}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
+            <div key={idx} className="sleek-card machine-card">
+              <div className="machine-image-canvas">
+                <Image
+                  src={machine.image}
+                  alt={machine.title}
+                  fill
+                  style={{ objectFit: "contain" }}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
               </div>
 
-              {/* Product Details */}
-              <div style={{ padding: "24px", display: "flex", flexDirection: "column", flexGrow: 1 }}>
-                <span style={{ fontSize: "0.82rem", color: "var(--color-primary)", fontWeight: 700, marginBottom: "6px" }}>
-                  {machine.specs}
-                </span>
-
-                <h3 style={{ fontSize: "1.2rem", fontWeight: 800, marginBottom: "10px", color: "var(--text-primary)" }}>
-                  {machine.title}
-                </h3>
-
-                <p style={{ fontSize: "0.88rem", color: "var(--text-secondary)", lineHeight: 1.55 }}>
-                  {machine.description}
-                </p>
+              <div className="machine-info">
+                <span className="machine-specs">{machine.specs}</span>
+                <h3 className="machine-title">{machine.title}</h3>
+                <p className="machine-desc">{machine.description}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        .tabs-wrapper {
+          display: flex;
+          justify-content: center;
+          margin-top: 24px;
+        }
+
+        .tabs-container {
+          display: inline-flex;
+          gap: 6px;
+          background: #ffffff;
+          padding: 6px;
+          border-radius: 12px;
+          border: 1px solid var(--border-color);
+          max-width: 100%;
+        }
+
+        .tab-btn {
+          padding: 8px 18px;
+          border-radius: 8px;
+          font-size: 0.88rem;
+          font-weight: 600;
+          cursor: pointer;
+          border: none;
+          background: transparent;
+          color: var(--text-secondary);
+          white-space: nowrap;
+          transition: all 0.15s ease;
+        }
+
+        .tab-btn.active {
+          background: var(--color-primary);
+          color: #ffffff;
+        }
+
+        .machinery-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 28px;
+        }
+
+        .machine-card {
+          border-radius: 16px;
+          border: 1px solid var(--border-color);
+          background: #ffffff;
+        }
+
+        .machine-image-canvas {
+          position: relative;
+          height: 260px;
+          background: #ffffff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 20px;
+          border-bottom: 1px solid var(--border-light);
+        }
+
+        .machine-info {
+          padding: 24px;
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+        }
+
+        .machine-specs {
+          font-size: 0.82rem;
+          color: var(--color-primary);
+          font-weight: 700;
+          margin-bottom: 6px;
+          line-height: 1.35;
+        }
+
+        .machine-title {
+          font-size: 1.2rem;
+          font-weight: 800;
+          margin-bottom: 10px;
+          color: var(--text-primary);
+          line-height: 1.25;
+        }
+
+        .machine-desc {
+          font-size: 0.88rem;
+          color: var(--text-secondary);
+          line-height: 1.55;
+        }
+
+        @media (max-width: 768px) {
+          .tabs-wrapper {
+            justify-content: flex-start;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 6px;
+            margin: 20px -16px 0 -16px;
+            padding-left: 16px;
+            padding-right: 16px;
+          }
+          .tabs-container {
+            display: flex;
+            flex-wrap: nowrap;
+          }
+          .tab-btn {
+            padding: 8px 14px;
+            font-size: 0.82rem;
+          }
+          .machinery-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+          }
+          .machine-image-canvas {
+            height: 220px;
+            padding: 16px;
+          }
+          .machine-info {
+            padding: 18px 16px;
+          }
+          .machine-title {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+          }
+          .machine-desc {
+            font-size: 0.85rem;
+          }
+        }
+      `}</style>
     </section>
   );
 }
