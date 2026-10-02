@@ -1,32 +1,34 @@
 "use client";
 
 import React, { useState } from "react";
-import { Phone, Mail, MessageCircle, Send } from "lucide-react";
+import { Phone, Mail, Send } from "lucide-react";
 
 export default function ContactSection() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [interest, setInterest] = useState("Commercial Soft-Serve Machinery");
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !phone) {
-      alert("Please provide your name and phone number");
+      alert("Please provide your name and phone number.");
       return;
     }
     const text = encodeURIComponent(
-      `Hello Cremier Dela! 👋\n\nName: ${name}\nPhone: ${phone}\n\nMessage: ${message || "I would like to inquire about your products and services."}`
+      `Hello Cremier Dela,\n\nName: ${name}\nPhone: ${phone}\nInterest: ${interest}\n\nMessage:\n${message || "I am inquiring about commercial pricing and availability."}`
     );
     window.open(`https://wa.me/2348033159674?text=${text}`, "_blank");
   };
 
   return (
-    <section id="contact" className="section section-subtle">
+    <section id="contact" className="section" style={{ backgroundColor: "#f8fafc" }}>
       <div className="container">
+        {/* Section Header (No pill badge) */}
         <div className="section-header">
-          <h2 className="section-title">Contact Us</h2>
+          <h2 className="section-title">Request Quotations &amp; Technical Support</h2>
           <p className="section-description">
-            Reach out directly for orders, machine quotations, repair bookings, or school admissions.
+            Connect with our team for machine pricing, bulk powder supply, servicing requests, or academy admissions.
           </p>
         </div>
 
@@ -34,96 +36,135 @@ export default function ContactSection() {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr",
-            gap: "40px"
+            gap: "48px"
           }}
-          className="contact-grid"
+          className="contact-layout"
         >
-          {/* Left Column: Direct Details */}
+          {/* Left Column: Direct Office Lines */}
           <div>
-            <h3 style={{ fontSize: "1.3rem", fontWeight: 700, marginBottom: "20px" }}>
-              Direct Contact Lines
+            <h3 style={{ fontSize: "1.35rem", fontWeight: 800, color: "var(--text-primary)", marginBottom: "20px" }}>
+              Direct Office Lines
             </h3>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "32px" }}>
-              <div className="simple-card" style={{ padding: "18px 20px", display: "flex", alignItems: "center", gap: "16px" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "36px" }}>
+              <div
+                style={{
+                  padding: "20px",
+                  borderRadius: "16px",
+                  background: "#ffffff",
+                  border: "1px solid var(--border-color)",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "16px"
+                }}
+              >
                 <div
                   style={{
-                    width: "44px",
-                    height: "44px",
-                    borderRadius: "10px",
-                    backgroundColor: "var(--color-primary-soft)",
+                    width: "48px",
+                    height: "48px",
+                    borderRadius: "12px",
+                    background: "var(--color-primary-soft)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     color: "var(--color-primary)"
                   }}
                 >
-                  <Phone size={20} />
+                  <Phone size={22} />
                 </div>
                 <div>
-                  <span style={{ fontSize: "0.8rem", color: "var(--text-secondary)", display: "block" }}>
-                    Primary Hotline &amp; WhatsApp
+                  <span style={{ fontSize: "0.8rem", color: "var(--text-secondary)", fontWeight: 600, display: "block" }}>
+                    Primary Commercial Sales &amp; Technical Line
                   </span>
-                  <a href="tel:08033159674" style={{ fontSize: "1.15rem", fontWeight: 700, color: "var(--text-primary)" }}>
+                  <a
+                    href="tel:08033159674"
+                    style={{ fontSize: "1.2rem", fontWeight: 800, color: "var(--text-primary)" }}
+                  >
                     08033159674
                   </a>
                 </div>
               </div>
 
-              <div className="simple-card" style={{ padding: "18px 20px", display: "flex", alignItems: "center", gap: "16px" }}>
+              <div
+                style={{
+                  padding: "20px",
+                  borderRadius: "16px",
+                  background: "#ffffff",
+                  border: "1px solid var(--border-color)",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "16px"
+                }}
+              >
                 <div
                   style={{
-                    width: "44px",
-                    height: "44px",
-                    borderRadius: "10px",
-                    backgroundColor: "var(--color-accent-soft)",
+                    width: "48px",
+                    height: "48px",
+                    borderRadius: "12px",
+                    background: "var(--color-accent-soft)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    color: "var(--color-accent)"
+                    color: "var(--color-accent-hover)"
                   }}
                 >
-                  <Phone size={20} />
+                  <Phone size={22} />
                 </div>
                 <div>
-                  <span style={{ fontSize: "0.8rem", color: "var(--text-secondary)", display: "block" }}>
-                    Secondary Hotline &amp; Training School
+                  <span style={{ fontSize: "0.8rem", color: "var(--text-secondary)", fontWeight: 600, display: "block" }}>
+                    Secondary Line &amp; Training Academy
                   </span>
-                  <a href="tel:08039445604" style={{ fontSize: "1.15rem", fontWeight: 700, color: "var(--text-primary)" }}>
+                  <a
+                    href="tel:08039445604"
+                    style={{ fontSize: "1.2rem", fontWeight: 800, color: "var(--text-primary)" }}
+                  >
                     08039445604
                   </a>
                 </div>
               </div>
 
-              <div className="simple-card" style={{ padding: "18px 20px", display: "flex", alignItems: "center", gap: "16px" }}>
+              <div
+                style={{
+                  padding: "20px",
+                  borderRadius: "16px",
+                  background: "#ffffff",
+                  border: "1px solid var(--border-color)",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "16px"
+                }}
+              >
                 <div
                   style={{
-                    width: "44px",
-                    height: "44px",
-                    borderRadius: "10px",
-                    backgroundColor: "#f1f5f9",
+                    width: "48px",
+                    height: "48px",
+                    borderRadius: "12px",
+                    background: "#eff6ff",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    color: "#0284c7"
+                    color: "#2563eb"
                   }}
                 >
-                  <Mail size={20} />
+                  <Mail size={22} />
                 </div>
                 <div>
-                  <span style={{ fontSize: "0.8rem", color: "var(--text-secondary)", display: "block" }}>
-                    Email Address
+                  <span style={{ fontSize: "0.8rem", color: "var(--text-secondary)", fontWeight: 600, display: "block" }}>
+                    Corporate Email Inquiries
                   </span>
-                  <a href="mailto:cremierdela@gmail.com" style={{ fontSize: "1.05rem", fontWeight: 600, color: "var(--text-primary)" }}>
+                  <a
+                    href="mailto:cremierdela@gmail.com"
+                    style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--text-primary)" }}
+                  >
                     cremierdela@gmail.com
                   </a>
                 </div>
               </div>
             </div>
 
-            {/* Social Media */}
-            <h4 style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "12px" }}>
-              Social Media
+            {/* Social Channels */}
+            <h4 style={{ fontSize: "0.95rem", fontWeight: 800, color: "var(--text-primary)", marginBottom: "14px" }}>
+              Official Social Media
             </h4>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
               <a
@@ -131,7 +172,7 @@ export default function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline"
-                style={{ padding: "8px 16px", fontSize: "0.88rem" }}
+                style={{ padding: "9px 16px", fontSize: "0.85rem" }}
               >
                 TikTok: <strong>@cremier_dela</strong>
               </a>
@@ -140,7 +181,7 @@ export default function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline"
-                style={{ padding: "8px 16px", fontSize: "0.88rem" }}
+                style={{ padding: "9px 16px", fontSize: "0.85rem" }}
               >
                 Instagram: <strong>Cremier Dela</strong>
               </a>
@@ -149,31 +190,39 @@ export default function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline"
-                style={{ padding: "8px 16px", fontSize: "0.88rem" }}
+                style={{ padding: "9px 16px", fontSize: "0.85rem" }}
               >
                 Facebook: <strong>Cremier Dela</strong>
               </a>
             </div>
           </div>
 
-          {/* Right Column: Clean Form */}
-          <div className="simple-card" style={{ padding: "32px" }}>
-            <h3 style={{ fontSize: "1.3rem", fontWeight: 700, marginBottom: "8px" }}>
-              Send a Quick Message
+          {/* Right Column: Clean Inquiry Form */}
+          <div
+            className="sleek-card"
+            style={{
+              padding: "36px",
+              background: "#ffffff",
+              border: "1px solid var(--border-color)",
+              borderRadius: "20px"
+            }}
+          >
+            <h3 style={{ fontSize: "1.35rem", fontWeight: 800, color: "var(--text-primary)", marginBottom: "6px" }}>
+              Send An Inquiry
             </h3>
-            <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", marginBottom: "20px" }}>
-              Enter your name and phone number to send your request directly to our team.
+            <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", marginBottom: "24px" }}>
+              Fill in your details and our representative will follow up directly with pricing, specs, or availability.
             </p>
 
-            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
               <div>
-                <label style={{ display: "block", fontSize: "0.85rem", fontWeight: 600, marginBottom: "6px" }}>
-                  Your Name *
+                <label style={{ display: "block", fontSize: "0.85rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "6px" }}>
+                  Your Full Name *
                 </label>
                 <input
                   type="text"
                   required
-                  placeholder="Enter your full name"
+                  placeholder="e.g. Adebayo Johnson"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="form-input"
@@ -181,7 +230,7 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label style={{ display: "block", fontSize: "0.85rem", fontWeight: 600, marginBottom: "6px" }}>
+                <label style={{ display: "block", fontSize: "0.85rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "6px" }}>
                   Phone / WhatsApp Number *
                 </label>
                 <input
@@ -195,21 +244,44 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label style={{ display: "block", fontSize: "0.85rem", fontWeight: 600, marginBottom: "6px" }}>
-                  Message or Inquiries
+                <label style={{ display: "block", fontSize: "0.85rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "6px" }}>
+                  Category of Interest
+                </label>
+                <select
+                  value={interest}
+                  onChange={(e) => setInterest(e.target.value)}
+                  className="form-input"
+                  style={{ cursor: "pointer" }}
+                >
+                  <option value="Commercial Soft-Serve Machinery">Commercial Soft-Serve Machinery</option>
+                  <option value="Gelato & Batch Freezers">Gelato &amp; Batch Freezers</option>
+                  <option value="Ice Cream Powders (2.5kg / Wholesale)">Ice Cream Powders (2.5kg / Wholesale)</option>
+                  <option value="Machine Repairs & Servicing">Machine Repairs &amp; Servicing</option>
+                  <option value="Training Academy Admission">Training Academy Admission</option>
+                  <option value="Kitchen Utensils & Accessories">Kitchen Utensils &amp; Accessories</option>
+                </select>
+              </div>
+
+              <div>
+                <label style={{ display: "block", fontSize: "0.85rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "6px" }}>
+                  Message or Specific Inquiries
                 </label>
                 <textarea
                   rows={4}
-                  placeholder="Tell us what you need (Powders, Machines, Repairs, Training...)"
+                  placeholder="Tell us what you need (e.g. Machine model, powder quantity, delivery location)..."
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   className="form-textarea"
                 />
               </div>
 
-              <button type="submit" className="btn btn-whatsapp" style={{ width: "100%", padding: "14px" }}>
-                <Send size={18} />
-                <span>Send to WhatsApp</span>
+              <button
+                type="submit"
+                className="btn btn-primary"
+                style={{ width: "100%", padding: "14px", marginTop: "6px" }}
+              >
+                <Send size={16} />
+                <span>Submit Inquiry</span>
               </button>
             </form>
           </div>
@@ -217,9 +289,9 @@ export default function ContactSection() {
       </div>
 
       <style jsx>{`
-        @media (min-width: 900px) {
-          .contact-grid {
-            grid-template-columns: 1fr 1fr !important;
+        @media (min-width: 920px) {
+          .contact-layout {
+            grid-template-columns: 1fr 1.15fr !important;
           }
         }
       `}</style>

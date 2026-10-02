@@ -76,7 +76,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Right Contact Action Buttons */}
+        {/* Right Contact Action Button */}
         <div
           style={{
             display: "none",
@@ -86,23 +86,11 @@ export default function Navbar() {
           className="desktop-actions"
         >
           <a
-            href="tel:08033159674"
+            href="#contact"
             className="btn btn-outline"
-            style={{ padding: "9px 16px", fontSize: "0.9rem" }}
+            style={{ padding: "9px 20px", fontSize: "0.9rem" }}
           >
-            <Phone size={15} />
-            <span>08033159674</span>
-          </a>
-
-          <a
-            href="https://wa.me/2348033159674?text=Hello%20Cremier%20Dela,%20I%20would%20like%20to%20make%20an%20inquiry"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-whatsapp"
-            style={{ padding: "9px 18px", fontSize: "0.9rem" }}
-          >
-            <MessageCircle size={16} />
-            <span>WhatsApp</span>
+            <span>Contact Us</span>
           </a>
         </div>
 
@@ -152,24 +140,14 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
-          <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginTop: "12px" }}>
+          <div style={{ marginTop: "12px" }}>
             <a
-              href="https://wa.me/2348033159674?text=Hello%20Cremier%20Dela"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-whatsapp"
-              style={{ width: "100%" }}
-            >
-              <MessageCircle size={18} />
-              <span>Chat on WhatsApp</span>
-            </a>
-            <a
-              href="tel:08033159674"
+              href="#contact"
+              onClick={() => setMobileMenuOpen(false)}
               className="btn btn-outline"
               style={{ width: "100%" }}
             >
-              <Phone size={16} />
-              <span>Call 08033159674</span>
+              <span>Contact Us</span>
             </a>
           </div>
         </div>

@@ -2,85 +2,109 @@
 
 import React from "react";
 import Image from "next/image";
-import { MessageCircle, Phone, Check } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function ServicesSection() {
-  const points = [
-    "Commercial soft-serve and batch freezer installation & calibration",
-    "Refrigeration troubleshooting, gas leak detection & recharge",
-    "Routine preventative maintenance to avoid costly breakdowns",
-    "Emergency breakdown support for shops and caterers",
-    "In-stock spare parts: O-rings, seals, scraper blades, and belts"
+  const servicePillars = [
+    {
+      title: "On-Site Emergency Repairs",
+      desc: "Fast technical dispatch across commercial hubs in Lagos, Abuja, and surrounding states to resolve sudden breakdowns."
+    },
+    {
+      title: "Preventive Maintenance",
+      desc: "Routine calibration of expansion valves, cylinder descaling, seal replacements, and refrigerant pressure checks."
+    },
+    {
+      title: "Original Factory Spare Parts",
+      desc: "Direct access to authentic food-grade O-rings, beater rods, dispensing handles, micro-switches, and heavy-duty motors."
+    },
+    {
+      title: "Machine Installation & Commissioning",
+      desc: "Professional voltage verification, stabilizer matching, sanitary water connection, and initial batch calibration."
+    }
   ];
 
   return (
-    <section id="repairs" className="section section-subtle">
+    <section id="repairs" className="section" style={{ backgroundColor: "#f8fafc" }}>
       <div className="container">
-        <div className="section-header">
-          <h2 className="section-title">Machine Repairs &amp; Installation</h2>
-          <p className="section-description">
-            Keep your ice cream machines running without downtime. Our certified technicians handle on-site installation, repairs, and genuine spare parts.
-          </p>
-        </div>
-
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "1fr",
-            gap: "40px",
+            gap: "56px",
             alignItems: "center"
           }}
-          className="services-grid"
+          className="services-layout"
         >
-          {/* Image */}
-          <div
-            style={{
-              position: "relative",
-              width: "100%",
-              height: "360px",
-              borderRadius: "14px",
-              overflow: "hidden",
-              border: "1px solid var(--border-color)"
-            }}
-          >
-            <Image
-              src="/images/machine-repair.jpg"
-              alt="Technician repairing ice cream machine"
-              fill
-              style={{ objectFit: "cover" }}
-              sizes="(max-width: 900px) 100vw, 50vw"
-            />
+          {/* Left Column: Authentic Nigerian Workshop Visual */}
+          <div style={{ position: "relative" }}>
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                height: "440px",
+                borderRadius: "20px",
+                overflow: "hidden",
+                border: "1px solid var(--border-color)",
+                boxShadow: "var(--shadow-md)"
+              }}
+            >
+              <Image
+                src="/images/cremier-dela-technician-repairs-service.jpg"
+                alt="Cremier Dela Certified Nigerian Technicians Servicing Commercial Soft Serve Machine"
+                fill
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 900px) 100vw, 50vw"
+              />
+            </div>
           </div>
 
-          {/* Details & Actions */}
+          {/* Right Column: Copy & Single Booking Call-to-Action */}
           <div>
-            <h3 style={{ fontSize: "1.4rem", fontWeight: 700, marginBottom: "16px" }}>
-              Expert Technical Support Across Nigeria
-            </h3>
+            <h2 className="section-title" style={{ textAlign: "left", marginBottom: "16px" }}>
+              Machine Repairs, Servicing &amp; Genuine Spare Parts
+            </h2>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "28px" }}>
-              {points.map((point, idx) => (
-                <div key={idx} style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
-                  <Check size={18} color="var(--color-primary)" style={{ flexShrink: 0, marginTop: "3px" }} />
-                  <span style={{ fontSize: "0.95rem", color: "var(--text-secondary)" }}>{point}</span>
+            <p
+              style={{
+                fontSize: "1.05rem",
+                color: "var(--text-secondary)",
+                lineHeight: 1.65,
+                marginBottom: "28px"
+              }}
+            >
+              In the commercial dessert business, machine downtime means immediate lost revenue.
+              Our qualified service technicians ensure your equipment operates at peak refrigeration
+              efficiency with authentic parts and guaranteed workmanship.
+            </p>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+                gap: "20px",
+                marginBottom: "36px"
+              }}
+            >
+              {servicePillars.map((p, idx) => (
+                <div key={idx} style={{ display: "flex", gap: "10px" }}>
+                  <CheckCircle2 size={18} style={{ color: "var(--color-primary)", flexShrink: 0, marginTop: "2px" }} />
+                  <div>
+                    <h4 style={{ fontSize: "0.95rem", fontWeight: 800, color: "var(--text-primary)", marginBottom: "4px" }}>
+                      {p.title}
+                    </h4>
+                    <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", lineHeight: 1.45 }}>
+                      {p.desc}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
 
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
-              <a
-                href="https://wa.me/2348033159674?text=Hello%20Cremier%20Dela,%20I%20need%20a%20technician%20for%20machine%20repair%20or%20installation"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-whatsapp"
-              >
-                <MessageCircle size={18} />
-                <span>Book Technician on WhatsApp</span>
-              </a>
-
-              <a href="tel:08033159674" className="btn btn-outline">
-                <Phone size={16} />
-                <span>Call Hotline: 08033159674</span>
+            <div>
+              <a href="#contact" className="btn btn-primary" style={{ padding: "14px 28px" }}>
+                <span>Book A Service Technician</span>
+                <ArrowRight size={18} />
               </a>
             </div>
           </div>
@@ -89,8 +113,8 @@ export default function ServicesSection() {
 
       <style jsx>{`
         @media (min-width: 900px) {
-          .services-grid {
-            grid-template-columns: 1fr 1fr !important;
+          .services-layout {
+            grid-template-columns: 1fr 1.15fr !important;
           }
         }
       `}</style>

@@ -2,86 +2,101 @@
 
 import React from "react";
 import Image from "next/image";
-import { MessageCircle, Phone, Check } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function AcademySection() {
-  const topics = [
-    "Commercial ice cream formulation, recipe balancing, and overrun control",
-    "Hands-on soft-serve, hard-scoop gelato, and waffle cone making",
-    "Machine operation, daily sanitation, and preventive care",
-    "Parlour business economics: costing per scoop, margins, and menu pricing",
-    "Certificate of completion issued upon graduation"
+  const curriculum = [
+    {
+      title: "Commercial Machine Operation & Daily Care",
+      desc: "Learn hands-on daily startup, mix hopper loading, temperature calibration, and sanitary wash cycles to protect your equipment."
+    },
+    {
+      title: "Recipe Formulation & Overrun Control",
+      desc: "Master liquid-to-powder ratios, viscosity control, and techniques to produce slow-melting, high-overrun soft-serve in hot weather."
+    },
+    {
+      title: "Artisanal Gelato & Specialty Confections",
+      desc: "Small-batch Italian gelato churning, fresh fruit sorbet bases, waffle cone baking, and attractive swirl presentation."
+    },
+    {
+      title: "Parlour Business Economics & Costing",
+      desc: "Accurately calculate cost-per-cone, portion yields, waste reduction, and pricing strategies for commercial parlour profitability."
+    }
   ];
 
   return (
     <section id="training" className="section" style={{ backgroundColor: "#ffffff" }}>
       <div className="container">
-        <div className="section-header">
-          <h2 className="section-title">Ice Cream Training School</h2>
-          <p className="section-description">
-            Practical, hands-on training for aspiring parlour owners, caterers, and cafe operators.
-          </p>
-        </div>
-
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "1fr",
-            gap: "40px",
+            gap: "56px",
             alignItems: "center"
           }}
-          className="academy-grid"
+          className="academy-layout"
         >
-          {/* Image */}
-          <div
-            style={{
-              position: "relative",
-              width: "100%",
-              height: "360px",
-              borderRadius: "14px",
-              overflow: "hidden",
-              border: "1px solid var(--border-color)"
-            }}
-          >
-            <Image
-              src="/images/training-school.jpg"
-              alt="Cremier Dela Ice Cream Training Workshop"
-              fill
-              style={{ objectFit: "cover" }}
-              sizes="(max-width: 900px) 100vw, 50vw"
-            />
-          </div>
-
-          {/* Content */}
+          {/* Left Column: Context & Course Syllabus */}
           <div>
-            <h3 style={{ fontSize: "1.4rem", fontWeight: 700, marginBottom: "16px" }}>
-              Master the Craft &amp; Business of Ice Cream
-            </h3>
+            <h2 className="section-title" style={{ textAlign: "left", marginBottom: "16px" }}>
+              We Also Train: Cremier Dela Ice Cream Academy
+            </h2>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "28px" }}>
-              {topics.map((item, idx) => (
-                <div key={idx} style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
-                  <Check size={18} color="var(--color-primary)" style={{ flexShrink: 0, marginTop: "3px" }} />
-                  <span style={{ fontSize: "0.95rem", color: "var(--text-secondary)" }}>{item}</span>
+            <p
+              style={{
+                fontSize: "1.05rem",
+                color: "var(--text-secondary)",
+                lineHeight: 1.65,
+                marginBottom: "28px"
+              }}
+            >
+              Launching an ice cream brand or opening a parlour requires more than just machines.
+              Our comprehensive hands-on culinary workshops equip entrepreneurs, parlour managers,
+              and staff with the practical expertise needed to operate successfully.
+            </p>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "36px" }}>
+              {curriculum.map((item, idx) => (
+                <div key={idx} style={{ display: "flex", gap: "12px" }}>
+                  <CheckCircle2 size={18} style={{ color: "var(--color-primary)", flexShrink: 0, marginTop: "2px" }} />
+                  <div>
+                    <h4 style={{ fontSize: "0.95rem", fontWeight: 800, color: "var(--text-primary)", marginBottom: "3px" }}>
+                      {item.title}
+                    </h4>
+                    <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", lineHeight: 1.45 }}>
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
 
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
-              <a
-                href="https://wa.me/2348033159674?text=Hello%20Cremier%20Dela,%20I%20want%20to%20inquire%20about%20the%20Ice%20Cream%20Training%20School%20dates%20and%20fees"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-whatsapp"
-              >
-                <MessageCircle size={18} />
-                <span>Inquire Next Cohort on WhatsApp</span>
-              </a>
+            <a href="#contact" className="btn btn-outline" style={{ padding: "13px 26px" }}>
+              <span>Inquire About Next Training Session</span>
+              <ArrowRight size={16} />
+            </a>
+          </div>
 
-              <a href="tel:08039445604" className="btn btn-outline">
-                <Phone size={16} />
-                <span>Call 08039445604</span>
-              </a>
+          {/* Right Column: Authentic Nigerian Academy Visual */}
+          <div style={{ position: "relative" }}>
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                height: "440px",
+                borderRadius: "20px",
+                overflow: "hidden",
+                border: "1px solid var(--border-color)",
+                boxShadow: "var(--shadow-md)"
+              }}
+            >
+              <Image
+                src="/images/cremier-dela-ice-cream-training-academy.jpg"
+                alt="Cremier Dela Hands-on Ice Cream Masterclass Academy in Nigeria"
+                fill
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 900px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>
@@ -89,8 +104,8 @@ export default function AcademySection() {
 
       <style jsx>{`
         @media (min-width: 900px) {
-          .academy-grid {
-            grid-template-columns: 1fr 1fr !important;
+          .academy-layout {
+            grid-template-columns: 1.15fr 1fr !important;
           }
         }
       `}</style>

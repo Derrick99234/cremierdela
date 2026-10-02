@@ -2,125 +2,135 @@
 
 import React from "react";
 import Image from "next/image";
-import { MessageCircle } from "lucide-react";
 
 export default function UtensilsSection() {
   const utensils = [
     {
-      name: "Stainless Steel Ice Cream Scoops",
-      desc: "Heavy-duty portion scoops with spring trigger release for effortless serving without wrist strain."
-    },
-    {
-      name: "Belgian Waffle Cone Makers",
-      desc: "Commercial non-stick waffle cone and bowl baker producing fresh crisp cones in 90 seconds."
+      name: "Stainless Steel Portion Scoops",
+      desc: "Heavy-duty ergonomic portion scoops with smooth spring trigger release for effortless serving without wrist fatigue."
     },
     {
       name: "Sanitary Cone Dispensers",
-      desc: "Clear countertop and wall-mount dispensers protecting cones from dust, moisture, and breakage."
+      desc: "Clear countertop and wall-mounted dispensers that protect waffle and wafer cones from airborne dust, humidity, and breakage."
     },
     {
       name: "Gastronorm Gelato Pan Tubs",
-      desc: "Food-grade stainless steel pans designed for standard dipping cabinets and batch display."
+      desc: "Food-grade stainless steel pans crafted for standard commercial display dipping cabinets and shock-freezing storage."
     },
     {
       name: "Toppings Dispenser Organizers",
-      desc: "Multi-tier stations with clear lids for sprinkles, nuts, cookie crumbles, and sauce syrups."
+      desc: "Multi-tier stations with clear hinged lids for sprinkles, cookie crumbles, syrups, chocolate chips, and chopped nuts."
     },
     {
-      name: "Commercial Immersion Blenders",
-      desc: "High-power stainless steel blenders to mix Cremier Dela powders smoothly without lumps."
+      name: "Commercial Immersion Mixers",
+      desc: "High-power stainless immersion blenders designed to blend Cremier Dela powder mixes smoothly without lumps."
+    },
+    {
+      name: "Measuring Cylinders & Brix Refractometers",
+      desc: "Quality control tools to ensure precise water-to-powder ratios, consistent sweetness levels, and predictable overrun every batch."
     }
   ];
 
   return (
     <section id="utensils" className="section" style={{ backgroundColor: "#ffffff" }}>
       <div className="container">
+        {/* Section Header (No pill badge) */}
         <div className="section-header">
           <h2 className="section-title">Kitchen Utensils &amp; Accessories</h2>
           <p className="section-description">
-            Commercial-grade accessories, scoops, waffle bakers, and storage tools for ice cream shops.
+            Commercial-grade accessories, waffle makers, portion scoops, and hygiene dispensers
+            for smooth day-to-day parlour operations.
           </p>
         </div>
 
+        {/* Featured Spotlight: Double Waffle Cone Baker (No pill badge, no repetitive button) */}
         <div
           style={{
+            background: "#f8fafc",
+            borderRadius: "20px",
+            border: "1px solid var(--border-color)",
+            padding: "36px",
+            marginBottom: "40px",
             display: "grid",
             gridTemplateColumns: "1fr",
-            gap: "32px",
-            alignItems: "center",
-            marginBottom: "40px"
+            gap: "36px",
+            alignItems: "center"
           }}
-          className="utensils-grid"
+          className="waffle-spotlight"
         >
           <div
             style={{
               position: "relative",
-              width: "100%",
               height: "280px",
               borderRadius: "14px",
-              overflow: "hidden",
-              border: "1px solid var(--border-color)"
+              background: "#ffffff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "20px",
+              border: "1px solid var(--border-light)"
             }}
           >
             <Image
-              src="/images/kitchen-utensils.jpg"
-              alt="Cremier Dela Kitchen Utensils"
+              src="/images/cremier-dela-commercial-double-waffle-cone-maker.jpg"
+              alt="Cremier Dela Commercial Double Waffle Cone Baker"
               fill
-              style={{ objectFit: "cover" }}
-              sizes="(max-width: 1200px) 100vw, 1180px"
+              style={{ objectFit: "contain" }}
+              sizes="(max-width: 900px) 100vw, 50vw"
             />
+          </div>
+
+          <div>
+            <h3 style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--text-primary)", marginBottom: "12px" }}>
+              Commercial Double Waffle Cone &amp; Bowl Baker
+            </h3>
+
+            <p style={{ fontSize: "0.95rem", color: "var(--text-secondary)", lineHeight: 1.6 }}>
+              Freshly baked waffle cones increase parlour sales through aroma and presentation.
+              Our heavy-duty electric double baker features independent precision thermostats, non-stick Teflon hotplates,
+              and a fast 90-second baking cycle.
+            </p>
           </div>
         </div>
 
+        {/* Utensils Grid (No pill badges, no repetitive links on every card) */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "20px"
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gap: "24px"
           }}
         >
           {utensils.map((item, idx) => (
             <div
               key={idx}
-              className="simple-card"
+              className="sleek-card"
               style={{
-                padding: "20px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between"
+                padding: "24px",
+                background: "#ffffff",
+                borderRadius: "16px",
+                border: "1px solid var(--border-color)"
               }}
             >
-              <div>
-                <h3 style={{ fontSize: "1.05rem", fontWeight: 700, marginBottom: "8px" }}>
-                  {item.name}
-                </h3>
-                <p style={{ fontSize: "0.88rem", color: "var(--text-secondary)", lineHeight: 1.5, marginBottom: "16px" }}>
-                  {item.desc}
-                </p>
-              </div>
+              <h4 style={{ fontSize: "1.15rem", fontWeight: 800, color: "var(--text-primary)", marginBottom: "8px" }}>
+                {item.name}
+              </h4>
 
-              <a
-                href={`https://wa.me/2348033159674?text=${encodeURIComponent(
-                  `Hello Cremier Dela, I am inquiring about: ${item.name}`
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "6px",
-                  color: "var(--color-primary)",
-                  fontWeight: 600,
-                  fontSize: "0.88rem"
-                }}
-              >
-                <MessageCircle size={15} />
-                <span>Inquire on WhatsApp &rarr;</span>
-              </a>
+              <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", lineHeight: 1.55 }}>
+                {item.desc}
+              </p>
             </div>
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        @media (min-width: 900px) {
+          .waffle-spotlight {
+            grid-template-columns: 1fr 1.2fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
