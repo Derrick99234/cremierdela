@@ -129,57 +129,58 @@ export default function RootLayout({
         ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "Commercial Dessert Equipment & Supplies",
+          "name": "Commercial Dessert Equipment, Powders & Services",
           "itemListElement": [
             {
               "@type": "OfferCatalog",
               "name": "Commercial Ice Cream Machinery",
               "itemListElement": [
                 {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Product",
-                    "name": "Commercial Soft-Serve Freezers (Pair)",
-                    "description": "Countertop & Freestanding duo with dual compressors and independent hopper pre-cooling."
-                  }
+                  "@type": "Service",
+                  "name": "Commercial Soft-Serve Machinery Supply & Installation",
+                  "description": "Countertop and freestanding soft-serve machines with dual compressors, fast freeze-down, and nationwide delivery across Nigeria."
                 },
                 {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Product",
-                    "name": "Oceanpower Floor Standing Soft Serve Machine",
-                    "description": "Twin hopper 3-lever commercial soft-serve dispenser for high-traffic parlours."
-                  }
+                  "@type": "Service",
+                  "name": "Oceanpower Floor Standing Soft Serve Freezers",
+                  "description": "Twin hopper 3-lever commercial soft-serve dispenser for high-traffic parlours."
                 },
                 {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Product",
-                    "name": "Commercial Hard Ice Cream Batch Freezer",
-                    "description": "High-torque industrial batch freezer for artisanal Italian gelato and hard scoop ice cream."
-                  }
+                  "@type": "Service",
+                  "name": "Commercial Hard Ice Cream & Gelato Batch Freezers",
+                  "description": "High-torque industrial batch freezers engineered for artisanal Italian gelato and hard scoop ice cream."
                 }
               ]
             },
             {
               "@type": "OfferCatalog",
-              "name": "Signature Soft-Serve Powders",
+              "name": "Signature Soft-Serve Powders & Bulk Ingredients",
               "itemListElement": [
                 {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Product",
-                    "name": "Cremier Dela Vanilla Soft-Serve Powder 2.5kg",
-                    "description": "Rich velvety vanilla formulation yielding 80-90 portions per pouch."
-                  }
+                  "@type": "Service",
+                  "name": "Wholesale Vanilla Soft-Serve Powder Supply",
+                  "description": "Rich velvety vanilla formulation yielding 80-90 portions per 2.5kg pouch, also available in 15kg cartons and 25kg sacks."
                 },
                 {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Product",
-                    "name": "Cremier Dela Strawberry Soft-Serve Powder 2.5kg",
-                    "description": "Authentic fruit-note strawberry soft-serve mix for commercial dispensers."
-                  }
+                  "@type": "Service",
+                  "name": "Wholesale Strawberry Soft-Serve Powder Supply",
+                  "description": "Authentic fruit-note strawberry soft-serve mix for commercial dispensers."
+                }
+              ]
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Technical Servicing & Culinary Academy",
+              "itemListElement": [
+                {
+                  "@type": "Service",
+                  "name": "Commercial Machine Repairs & Genuine Spare Parts",
+                  "description": "Emergency on-site technician repairs, voltage calibration, and genuine replacement parts across Nigeria."
+                },
+                {
+                  "@type": "Service",
+                  "name": "Cremier Dela Ice Cream Academy Hands-On Masterclass",
+                  "description": "Hands-on culinary workshops on commercial machine operation, recipe formulation, and parlour business economics."
                 }
               ]
             }
