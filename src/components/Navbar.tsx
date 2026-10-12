@@ -23,7 +23,7 @@ export default function Navbar() {
         <a href="#" className="navbar-logo-link">
           <div className="navbar-logo-box">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-espresso-gold.png"
               alt="Cremier Dela"
               fill
               style={{ objectFit: "contain" }}
