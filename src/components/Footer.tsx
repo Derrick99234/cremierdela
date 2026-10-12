@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="footer-brand">
             <div className="footer-logo-box">
               <Image
-                src="/images/logo-espresso-gold.png"
+                src="/images/logo.png"
                 alt="Cremier Dela"
                 fill
                 style={{ objectFit: "contain" }}

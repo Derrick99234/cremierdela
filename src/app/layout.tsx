@@ -69,8 +69,8 @@ export const metadata: Metadata = {
     images: ["/images/cremier-dela-commercial-soft-serve-ice-cream-machines-pair.jpg"]
   },
   icons: {
-    icon: "/images/logo-espresso-gold.png",
-    apple: "/images/logo-espresso-gold.png"
+    icon: "/images/logo.png",
+    apple: "/images/logo.png"
   },
   other: {
     "geo.region": "NG-LA",
@@ -94,7 +94,7 @@ export default function RootLayout({
         "name": "Cremier Dela",
         "alternateName": "Cremier Dela Nigeria",
         "url": "https://cremierdela.com",
-        "logo": "https://cremierdela.com/images/logo-espresso-gold.png",
+        "logo": "https://cremierdela.com/images/logo.png",
         "image": "https://cremierdela.com/images/cremier-dela-commercial-soft-serve-ice-cream-machines-pair.jpg",
         "description": "Premier Nigerian supplier of commercial ice cream machines, artisanal gelato batch freezers, signature ice cream mix powders, on-site repairs, and certified culinary academy.",
         "telephone": ["+2348033159674", "+2348039445604"],

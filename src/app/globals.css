@@ -67,12 +67,7 @@ body {
   overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   color: var(--text-primary);
   font-weight: 800;
@@ -226,8 +221,7 @@ img {
 }
 
 /* Form inputs */
-.form-input,
-.form-textarea {
+.form-input, .form-textarea {
   width: 100%;
   padding: 14px 18px;
   border-radius: var(--radius-sm);
@@ -240,25 +234,15 @@ img {
   transition: all 0.2s ease;
 }
 
-.form-input:focus,
-.form-textarea:focus {
+.form-input:focus, .form-textarea:focus {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px var(--color-primary-soft);
 }
 
 /* Animations */
 @keyframes pulseSubtle {
-
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  50% {
-    transform: scale(1.04);
-    opacity: 0.9;
-  }
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.04); opacity: 0.9; }
 }
 
 .pulse-animation {
@@ -270,21 +254,18 @@ img {
   .container {
     padding: 0 16px;
   }
-
   .section {
     padding: 56px 0;
   }
-
   .section-header {
     margin-bottom: 32px;
   }
-
   .section-title {
     font-size: 1.85rem;
     line-height: 1.2;
   }
-
   .section-description {
     font-size: 0.95rem;
   }
 }
+
